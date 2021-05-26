@@ -11,6 +11,19 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function titleCased() {
+  const string = tutorials.map(element =>{
+    return element
+      .split(' ')
+      .map(function(word) {
+        return word[0].toUpperCase() + word.substr(1);
+      })
+    .join(' ');
+  })
+  return string
 }
+
+// function will look through each array of strings,
+// will determine if the strings first leeter of each word needs to be capitalized
+// will capitalize the words that need it
+// will return an array of strings that have proper case capitalization
